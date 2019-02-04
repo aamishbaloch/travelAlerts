@@ -5,7 +5,7 @@ import requests
 from geopy.geocoders import Nominatim
 
 from BVGConnect.exceptions import ErrorInvalidInput, BVGError
-from BVGConnect.settings import bvg_rest_url, geocoder_app_name
+from settings import geocoder_app_name
 
 
 class BVGConnect:
@@ -14,7 +14,7 @@ class BVGConnect:
     """
 
     def __init__(self):
-        self.base_url = bvg_rest_url
+        self.base_url = 'https://1.bvg.transport.rest/'
         self.geolocator = Nominatim(user_agent=geocoder_app_name)
 
     def get_earliest_journey_by_address(self, from_address, to_address):
